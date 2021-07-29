@@ -9,13 +9,14 @@ import SwiftUI
 
 struct TaskListView: View {
     let tasks = testData
+    @ObservedObject var taskListViewModel = TaskListViewModel()
 
     var body: some View {
         
         NavigationView {
             VStack(alignment: .leading) {
-                List(tasks) { task in
-                    TaskCell(task: task)
+                List(taskListViewModel.taskCellViewModels) { taskCellViewModel in
+                    TaskCell(taskCellViewModel: taskCellViewModel)
                         .onTapGesture {
                             
                         }
@@ -42,14 +43,14 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct TaskCell: View {    
-    let task: Task
+    @ObservedObject var taskCellViewModel: TaskCellViewModel
     
     var body: some View {
         HStack {
-            Image(systemName: task.completed ? "checkmark.circle.fill" : "circle")
+            Image(systemName: taskCellViewModel.task.completed ? "checkmark.circle.fill" : "circle")
                 .resizable()
                 .frame(width: 20, height: 20)
-            Text(task.title)
+            Text(taskCellViewModel.task.title)
                 .padding()
         }
     }
