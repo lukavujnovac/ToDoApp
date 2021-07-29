@@ -8,33 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		5FB2BAB826B333A9000F3876 /* to_do_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB2BAA526B333A8000F3876 /* to_do_appApp.swift */; };
-		5FB2BAB926B333A9000F3876 /* to_do_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB2BAA526B333A8000F3876 /* to_do_appApp.swift */; };
-		5FB2BABA26B333A9000F3876 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB2BAA626B333A8000F3876 /* ContentView.swift */; };
-		5FB2BABB26B333A9000F3876 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB2BAA626B333A8000F3876 /* ContentView.swift */; };
+		5FB2BABA26B333A9000F3876 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB2BAA626B333A8000F3876 /* TaskListView.swift */; };
 		5FB2BABC26B333A9000F3876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB2BAA726B333A9000F3876 /* Assets.xcassets */; };
-		5FB2BABD26B333A9000F3876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB2BAA726B333A9000F3876 /* Assets.xcassets */; };
+		5FB2BAC726B33533000F3876 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB2BAC626B33533000F3876 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5FB2BAA526B333A8000F3876 /* to_do_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = to_do_appApp.swift; sourceTree = "<group>"; };
-		5FB2BAA626B333A8000F3876 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5FB2BAA626B333A8000F3876 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		5FB2BAA726B333A9000F3876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FB2BAAC26B333A9000F3876 /* to-do app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "to-do app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB2BAAF26B333A9000F3876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FB2BAB426B333A9000F3876 /* to-do app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "to-do app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB2BAB626B333A9000F3876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FB2BAB726B333A9000F3876 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		5FB2BAC626B33533000F3876 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5FB2BAA926B333A9000F3876 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FB2BAB126B333A9000F3876 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,8 +49,9 @@
 			isa = PBXGroup;
 			children = (
 				5FB2BAA526B333A8000F3876 /* to_do_appApp.swift */,
-				5FB2BAA626B333A8000F3876 /* ContentView.swift */,
+				5FB2BACA26B33651000F3876 /* Views */,
 				5FB2BAA726B333A9000F3876 /* Assets.xcassets */,
+				5FB2BAC926B33536000F3876 /* Models */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -68,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				5FB2BAAC26B333A9000F3876 /* to-do app.app */,
-				5FB2BAB426B333A9000F3876 /* to-do app.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +79,22 @@
 				5FB2BAB726B333A9000F3876 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		5FB2BAC926B33536000F3876 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5FB2BAC626B33533000F3876 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5FB2BACA26B33651000F3876 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5FB2BAA626B333A8000F3876 /* TaskListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,23 +117,6 @@
 			productReference = 5FB2BAAC26B333A9000F3876 /* to-do app.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5FB2BAB326B333A9000F3876 /* to-do app (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5FB2BAC326B333A9000F3876 /* Build configuration list for PBXNativeTarget "to-do app (macOS)" */;
-			buildPhases = (
-				5FB2BAB026B333A9000F3876 /* Sources */,
-				5FB2BAB126B333A9000F3876 /* Frameworks */,
-				5FB2BAB226B333A9000F3876 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "to-do app (macOS)";
-			productName = "to-do app (macOS)";
-			productReference = 5FB2BAB426B333A9000F3876 /* to-do app.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -137,9 +127,6 @@
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					5FB2BAAB26B333A9000F3876 = {
-						CreatedOnToolsVersion = 12.5.1;
-					};
-					5FB2BAB326B333A9000F3876 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
@@ -158,7 +145,6 @@
 			projectRoot = "";
 			targets = (
 				5FB2BAAB26B333A9000F3876 /* to-do app (iOS) */,
-				5FB2BAB326B333A9000F3876 /* to-do app (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -172,14 +158,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5FB2BAB226B333A9000F3876 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FB2BABD26B333A9000F3876 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -187,17 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FB2BABA26B333A9000F3876 /* ContentView.swift in Sources */,
+				5FB2BABA26B333A9000F3876 /* TaskListView.swift in Sources */,
+				5FB2BAC726B33533000F3876 /* Task.swift in Sources */,
 				5FB2BAB826B333A9000F3876 /* to_do_appApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FB2BAB026B333A9000F3876 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FB2BABB26B333A9000F3876 /* ContentView.swift in Sources */,
-				5FB2BAB926B333A9000F3876 /* to_do_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,54 +330,6 @@
 			};
 			name = Release;
 		};
-		5FB2BAC426B333A9000F3876 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q3JU6T27Y3;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lukinafirmetina.to-do-app";
-				PRODUCT_NAME = "to-do app";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		5FB2BAC526B333A9000F3876 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = Q3JU6T27Y3;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lukinafirmetina.to-do-app";
-				PRODUCT_NAME = "to-do app";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -425,15 +347,6 @@
 			buildConfigurations = (
 				5FB2BAC126B333A9000F3876 /* Debug */,
 				5FB2BAC226B333A9000F3876 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5FB2BAC326B333A9000F3876 /* Build configuration list for PBXNativeTarget "to-do app (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5FB2BAC426B333A9000F3876 /* Debug */,
-				5FB2BAC526B333A9000F3876 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
