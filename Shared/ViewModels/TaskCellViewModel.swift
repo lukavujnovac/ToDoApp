@@ -26,8 +26,8 @@ class TaskCellViewModel: ObservableObject, Identifiable {
         .store(in: &cancelabels)
         
         $task
-            .map { task in 
-                task.id
+            .compactMap { task in 
+                task.id 
             }
             .assign(to: \.id, on: self)
             .store(in: &cancelabels)

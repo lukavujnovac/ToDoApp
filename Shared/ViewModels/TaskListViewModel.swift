@@ -9,14 +9,19 @@ import Foundation
 import Combine
 
 class TaskListViewModel: ObservableObject {
+    @Published var taskRepository = TaskRepository()
     @Published var taskCellViewModels = [TaskCellViewModel]()
     
     private var cancelables = Set<AnyCancellable>()
     
     init() {
-        self.taskCellViewModels = testData.map { task in
-            TaskCellViewModel(task: task)
+        taskRepository.$tasks.map { tasks in 
+            tasks.map { task in
+                TaskCellViewModel(task: task)
+            }
         }
+        .assign(to: \.taskCellViewModels, on: self)
+        .store(in: &cancelables)
     }
     
     func addTask(task: Task) {
